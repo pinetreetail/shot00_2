@@ -11,7 +11,7 @@ public:
 	// グラフィックデータ設定
 	void setHandle(int handle) { m_handle = handle; }
 
-	// プレイヤーの初期化
+	// 敵の初期化
 	void init();
 
 	// 処理
