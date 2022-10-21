@@ -21,6 +21,7 @@ void SceneMain::init()
 	m_player.setHandle(m_hPlayerGraphic);
 	m_player.init();
 
+	m_enemy.setMein(this);
 	m_enemy.setHandle(m_hPlayerGraphic);
 	m_enemy.init();
 
@@ -45,6 +46,11 @@ void SceneMain::update()
 	for (auto& shot : m_shot)
 	{
 		shot.update();
+		if (shot.isCol(m_enemy))
+		{
+			// “–‚½‚Á‚Ä‚¢‚éê‡‚Ìˆ—
+			m_enemy.setExist(false);
+		}
 	}
 
 	// ƒL[“ü—Íˆ—

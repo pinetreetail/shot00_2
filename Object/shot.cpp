@@ -40,6 +40,10 @@ void Shot::draw()
 
 bool Shot::isCol(Enemy& enemy)
 {
+	// ë∂ç›ÇµÇ»Ç¢ìGÅAë∂ç›ÇµÇ»Ç¢íeÇÕâΩÇ…Ç‡ìñÇΩÇÁÇ»Ç¢
+	if (!m_isExist) return false;
+	if (enemy.isExist()) return false;
+
 	float shotWidth	= 0;
 	float shotHeight = 0;
 	GetGraphSizeF(m_handle, &shotWidth, &shotHeight);
