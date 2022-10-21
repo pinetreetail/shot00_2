@@ -1,6 +1,6 @@
 #include "DxLib.h"
 #include "game.h"
-#include "player.h"
+#include "enemy.h"
 
 namespace
 {
@@ -9,17 +9,17 @@ namespace
 	constexpr float kAcc = 0.4f;
 }
 
-Player::Player()
+Enemy::Enemy()
 {
 	m_handle = -1;
 }
 
-Player::~Player()
+Enemy::~Enemy()
 {
 	
 }
 
-void Player::init()
+void Enemy::init()
 {
 	m_pos.x = 100.0f;
 	m_pos.y = 100.0f;
@@ -27,7 +27,7 @@ void Player::init()
 	m_vec.y = 0.0f;
 }
 
-void Player::update()
+void Enemy::update()
 {
 	// パッド(もしくはキーボード)からの入力を取得する
 	int padState = GetJoypadInputState(DX_INPUT_KEY_PAD1);
@@ -62,7 +62,7 @@ void Player::update()
 	m_pos += m_vec;
 }
 
-void Player::draw()
+void Enemy::draw()
 {
 	DrawGraphF(m_pos.x, m_pos.y, m_handle, true);
 }

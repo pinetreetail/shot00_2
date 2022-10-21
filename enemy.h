@@ -2,11 +2,11 @@
 
 #include "Vec2.h"
 
-class Player
+class Enemy
 {
 public:
-	Player();
-	virtual ~Player();
+	Enemy();
+	virtual ~Enemy();
 
 	// グラフィックデータ設定
 	void setHandle(int handle) { m_handle = handle; }
