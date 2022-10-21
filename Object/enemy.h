@@ -22,6 +22,10 @@ public:
 	// î•ñ‚Ìæ“¾
 	Vec2 getPos() const { return m_pos; }
 
+	// “–‚½‚è”»’è‚Ì•A‚‚³æ“¾
+	int getColWidth();
+	int getColHeight();
+
 private:
 	int m_handle;
 

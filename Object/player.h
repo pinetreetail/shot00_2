@@ -2,11 +2,16 @@
 
 #include "Vec2.h"
 
+class SceneMain;
+
 class Player
 {
 public:
 	Player();
 	virtual ~Player();
+
+	// SceneMainを設定
+	void setMein(SceneMain* pMein) { m_pMein = pMein; }
 
 	// グラフィックデータ設定
 	void setHandle(int handle) { m_handle = handle; }
@@ -23,7 +28,13 @@ public:
 	Vec2 getPos() const { return m_pos; }
 
 private:
+
+	SceneMain* m_pMein;
+
 	int m_handle;
+
+	// ショットの発射間隔
+	int m_shotInterval;
 
 	// 表示位置
 	Vec2 m_pos;
